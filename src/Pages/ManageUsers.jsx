@@ -58,13 +58,35 @@ const ManageUsers = () => {
 
     // }
 
+    const adminAproveEmailSand = async (email) => {
+        const data = {
+          email: email,
+        };
+        fetch('https://tonexbackend.onrender.com/api/adminAproveEmailSand', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+        .then(response=> response.json())
+          .then(response => {
+            console.log(response);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+
     const Verify = (id) => {
             const url = `https://tonex-backend.vercel.app/api/UserVerify/${id}`;
             axios.patch(url)
                 .then((response) => {
-                    console.log(response);
-                        
-                    window.location.reload();
+                    console.log(response.data.data.email);
+                    adminAproveEmailSand(response.data.data.email);
+                    setTimeout(() => {
+                        window.location.reload();
+                      }, 5000);
                 })
                 .catch((error) => {
                     console.log(error);
@@ -166,7 +188,7 @@ const ManageUsers = () => {
                                         </div>
                                         <div className="w-40 h-full flex items-center ">
                                             <button 
-                                            onClick={()=>{Verify(item._id)}}
+                                            onClick={()=>{Verify(item._id);}}
                                             className={`w-14 p-[0.10rem] ${
                                                 item?.verify === false
                                                     ? `bg-[red]`
