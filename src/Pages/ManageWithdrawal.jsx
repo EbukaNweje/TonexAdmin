@@ -136,7 +136,7 @@ const ManageWithdrawal = () => {
                                 userData.map((props)=> (
                                     <div className="w-full phone:w-max h-16 items-center justify-between flex border-b border-b-gray-200 font-semibold text-[rgb(33,37,41)]" key={props._id}>
                                     <div className="w-24 phone:w-36 h-max">
-                                        {props?.user.fullName} 
+                                        {props?.user?.fullName} 
                                     </div>
                                     <div className="w-36 phone:w-48 h-max">{props.amount}</div>
                                     <div className="w-36 h-max">{props.coin}</div>

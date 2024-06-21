@@ -54,6 +54,27 @@ const ManageUsers = () => {
     //     : [];
     console.log(userData);
 
+
+    // const sendSignUpEmail = async () => {
+//   const data = {
+//     email: email.value,
+//   };
+//   fetch('https://tonexbackend.onrender.com/api/signupemailsand', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify(data),
+//   })
+//   .then(response=> response.json())
+//     .then(response => {
+//       console.log(response);
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// };
+
     // const handleManageUser = () =>{
 
     // }
@@ -62,6 +83,7 @@ const ManageUsers = () => {
         const data = {
           email: email,
         };
+
         fetch('https://tonexbackend.onrender.com/api/adminAproveEmailSand', {
           method: 'POST',
           headers: {
@@ -76,9 +98,12 @@ const ManageUsers = () => {
           .catch((error) => {
             console.log(error);
           });
+
       };
 
-    const Verify = (id) => {
+
+
+    const Verify = (id) => { 
             const url = `https://tonex-backend.vercel.app/api/UserVerify/${id}`;
             axios.patch(url)
                 .then((response) => {

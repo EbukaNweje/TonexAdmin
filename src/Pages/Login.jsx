@@ -13,7 +13,6 @@ const Login = () => {
         axios
             .get(url)
             .then((response) => {
-                // console.log(response);
                 localStorage.setItem(
                     "allUserData",
                     JSON.stringify(response?.data)
@@ -62,8 +61,6 @@ const Login = () => {
                         nav("/admin/dashboard");
                     }
                     setLoading(false);
-
-                    //   window.location.reload();
                 })
                 .catch((error) => {
                     console.log(error);
