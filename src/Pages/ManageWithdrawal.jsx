@@ -7,13 +7,26 @@ import {toast} from "react-hot-toast";
 const ManageWithdrawal = () => {
   const [userData, setUserData] = useState([]);
 
+  const sendSignUpEmail = async (id) => {
+    const urlemail = `https://tonexbackend.onrender.com/api/confirmwithdrawalemailsend/${id}`
+    axios.post(urlemail)
+       .then(response => {
+         console.log(response);
+       })
+       .catch((error) => {
+         console.log(error);
+       });
+   };
+
     const acceptDeposit = (withdrawId) => {
         const url = `https://tonex-backend.vercel.app/api/confirm-withdrawal/${withdrawId}`;
         axios.post(url)
             .then((response) => {
+                sendSignUpEmail(withdrawId)
                 console.log(response.data.message);
                 toast.success(response.data.message);
                 window.location.reload();
+
             })
             .catch((error) => {
                 console.log(error);
