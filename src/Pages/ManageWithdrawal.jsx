@@ -12,6 +12,7 @@ const ManageWithdrawal = () => {
     axios.post(urlemail)
        .then(response => {
          console.log(response);
+         window.location.reload();
        })
        .catch((error) => {
          console.log(error);
@@ -25,8 +26,6 @@ const ManageWithdrawal = () => {
                 sendSignUpEmail(withdrawId)
                 console.log(response.data.message);
                 toast.success(response.data.message);
-                window.location.reload();
-
             })
             .catch((error) => {
                 console.log(error);
