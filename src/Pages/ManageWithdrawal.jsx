@@ -23,7 +23,8 @@ const ManageWithdrawal = () => {
         const url = `https://tonex-backend.vercel.app/api/confirm-withdrawal/${withdrawId}`;
         axios.post(url)
             .then((response) => {
-                sendSignUpEmail(withdrawId)
+                console.log(response.data.user._id)
+                sendSignUpEmail(response.data.user._id)
                 console.log(response.data.message);
                 toast.success(response.data.message);
             })
