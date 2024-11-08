@@ -288,13 +288,13 @@ const UserDetails = () => {
                                 </button>
                                 {showActions && (
                                     <div className="w-44 h-max absolute top-10 right-0 border border-gray-200 rounded p-3 bg-white shadow">
-                                        <NavLink
+                                        {/* <NavLink
                                             to={`/admin/dashboard/login-activity/${2}`}
                                         >
                                             <div className="w-full h-7 flex items-center pl-1 text-sm hover:bg-gray-300 cursor-pointer">
                                                 Login Activity
                                             </div>
-                                        </NavLink>
+                                        </NavLink> */}
                                         <div
                                             className="w-full h-7 flex items-center pl-1 text-sm hover:bg-gray-300 cursor-pointer"
                                             onClick={() =>
@@ -303,12 +303,12 @@ const UserDetails = () => {
                                         >
                                             Block
                                         </div>
-                                        <div
+                                        {/* <div
                                             className="w-full h-7 flex items-center pl-1 text-sm hover:bg-gray-300 cursor-pointer"
                                             onClick={handleOnRoi}
                                         >
                                             Turn off auto ROI
-                                        </div>
+                                        </div> */}
                                         <div
                                             className="w-full h-7 flex items-center pl-1 text-sm hover:bg-gray-300 cursor-pointer"
                                             onClick={() =>
@@ -333,12 +333,12 @@ const UserDetails = () => {
                                         >
                                             Clear Account
                                         </div>
-                                        <div
+                                        {/* <div
                                             className="w-full h-7 flex items-center pl-1 text-sm hover:bg-gray-300 cursor-pointer"
                                             onClick={() => setAddRoi(!addRoi)}
                                         >
                                             Add ROI history
-                                        </div>
+                                        </div> */}
                                         <div
                                             className="w-full h-7 flex items-center pl-1 text-sm hover:bg-gray-300 cursor-pointer"
                                             onClick={() => setEdit(!edit)}
