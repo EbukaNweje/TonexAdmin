@@ -122,7 +122,7 @@ const ManageUsers = () => {
     return (
         <>
             <div className="w-full h-max px-6 py-10 flex flex-col gap-2 phone:gap-8 bg-[#f9fbfd] text-[rgb(87,89,98)]">
-                <p className="text-[27px] font-semibold">Apextradepro users list</p>
+                <p className="text-[27px] font-semibold">Bitpaynexus users list</p>
                 <div className="w-full h-max px-6 py-5 bg-white">
                     <div className="full">
                         <div className="w-full h-14 flex items-center justify-between border-b-2 border-b-gray-200 px-5">
