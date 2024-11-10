@@ -32,6 +32,24 @@ const ManageDeposit = () => {
             });
     };
 
+
+    const deleteItem = async (depositId) => {
+          axios.delete(`https://tonex-backend.vercel.app/api/deleteoneDeposit/${depositId}`)
+          .then((response)=>{
+            console.log(response)
+            toast.success(response.data.message);
+            window.location.reload();
+          })
+          .catch((err)=>{
+            console.log(err)
+          })
+
+       
+      };
+
+
+
+
     useEffect(() => {
         getallDeposit();
     }, []);
@@ -156,7 +174,9 @@ const ManageDeposit = () => {
                                         <button className="py-2 px-3 bg-[#48abf7] rounded text-white" onClick={()=>acceptDeposit(props._id)}>
                                             Accept
                                         </button>
-                                        <button className="p-2 bg-[#f25961] rounded text-xs text-white">
+                                        <button className="p-2 bg-[#f25961] rounded text-xs text-white"
+                                            onClick={()=>deleteItem(props._id)}
+                                        >
                                             Delete
                                         </button>
                                     </div>
